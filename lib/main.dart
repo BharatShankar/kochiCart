@@ -151,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(30.0)),
-            color: Colors.teal[300]),
+            color: Color(0xff4B8DEE)),
         width: MediaQuery.of(context).size.width * 0.8,
         height: 60,
         // color: Colors.blue[900],
@@ -201,7 +201,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(30.0)),
-            color: Colors.teal[300]),
+            color: Color(0xff6FAF5A)),
         width: MediaQuery.of(context).size.width * 0.8,
         height: 60,
         // color: Colors.blue[900],

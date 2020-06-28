@@ -51,6 +51,7 @@ class PhoneSignInSectionState extends State<PhoneSignInSection> {
                 visible: userDataStore.phoneVisibility,
                 child: TextFormField(
                   controller: _phoneNumberController,
+                  keyboardType: TextInputType.phone,
                   decoration: const InputDecoration(
                       labelText: 'Phone number (+x xxx-xxx-xxxx)'),
                   validator: (String value) {

@@ -271,9 +271,10 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                           Padding(
                             padding: const EdgeInsets.only(left: 5),
                             child: Text(
-                              fooditemStore?.checkoutItems[index]
-                                      ?.dishTotalItemsPrice
-                                      .toString() ??
+                              "INR " +
+                                      fooditemStore?.checkoutItems[index]
+                                          ?.dishTotalItemsPrice
+                                          .toString() ??
                                   "N/A",
                               style: TextStyle(
                                   fontSize: 15,
