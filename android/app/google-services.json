@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1034983626371",
+    "firebase_url": "https://cart-bb6f6.firebaseio.com",
+    "project_id": "cart-bb6f6",
+    "storage_bucket": "cart-bb6f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034983626371:android:218583b23d115a94996db6",
+        "android_client_info": {
+          "package_name": "com.example.kochicart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034983626371-u7g744gvtn8u22uvm9v1s7o2cgfvja4r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kochicart",
+            "certificate_hash": "a0d2ceb092b2519fd53d543909b376f179fe5390"
+          }
+        },
+        {
+          "client_id": "1034983626371-ep3p5ja9eci0591hied0ep8q975jr72g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXahp3j9cDteYb-hZvetj8cHx-yHkstcg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034983626371-ep3p5ja9eci0591hied0ep8q975jr72g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
