@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: LoginPage(title: 'Flutter Demo Home Page'),
+        home: LoginPage(title: ''),
         routes: {
           Constants.ROUTE_HOME: (context) => HomePage(),
           Constants.ROUTE_CHECKOUT: (context) => CheckoutScreen(),

@@ -158,7 +158,7 @@ class _HomePageState extends State<HomePage> {
         children: <Widget>[
           productType(context, dish),
           Container(
-            width: MediaQuery.of(context).size.width * 0.6,
+            width: MediaQuery.of(context).size.width * 0.55,
             child: Padding(
               padding: const EdgeInsets.only(
                   left: 5, top: 15, right: 15, bottom: 15),
