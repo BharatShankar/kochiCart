@@ -3,8 +3,9 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
 import 'package:kochicart/models/foodItemsModel.dart';
+import 'package:kochicart/models/remainderModel.dart';
 import 'package:mobx/mobx.dart';
-
+import 'package:kochicart/main.dart';
 part 'foodItemStore.g.dart';
 
 class FoodItemStore = _FoodItemStore with _$FoodItemStore;
@@ -17,6 +18,15 @@ abstract class _FoodItemStore with Store {
   FoodItemsModel fooditemsObject = FoodItemsModel();
   // @Observable
   // CategoryDishes categoryDishes = CategoryDishes();
+
+  @observable
+  List<RemainderData> listOfRemainders = [];
+
+  @observable
+  bool isRemainderGoEdited = false;
+
+  @observable
+  int remainderIndex = -0;
 
   @observable
   List<CategoryDishes> checkoutItems = [];
@@ -46,10 +56,8 @@ abstract class _FoodItemStore with Store {
     int statusCode = response.statusCode;
     if (statusCode == 200) {
       print("response json $statusCode");
-
       String json = response.body;
       print(json);
-
       foodItemsList = (jsonDecode(json) as List)
           .map((e) => new FoodItemsModel.fromJson(e))
           .toList();
@@ -85,6 +93,31 @@ abstract class _FoodItemStore with Store {
       print(subTotal);
     }
     subTotalCount = subTotal;
+  }
+
+  @action
+  List<RemainderData> getCount() {
+    print("object print");
+
+    return remainderStore.listOfRemainders;
+  }
+
+  @action
+  void deleteRemainder(int index) {
+    print("delete in store");
+    remainderStore.listOfRemainders.remove(listOfRemainders[index]);
+  }
+
+  @action
+  void saveRemainder(RemainderData remainder) {
+    print(listOfRemainders.length);
+    remainderStore.listOfRemainders.add(remainder);
+    print(listOfRemainders.length);
+  }
+
+  @action
+  void editRemainder(RemainderData remainder, indexOfRemainder) {
+    remainderStore.listOfRemainders.insert(indexOfRemainder, remainder);
   }
 
   @action

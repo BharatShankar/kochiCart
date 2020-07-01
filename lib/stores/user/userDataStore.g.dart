@@ -39,6 +39,21 @@ mixin _$UserDataStore on _UserDataStore, Store {
     });
   }
 
+  final _$phoneVisibilityAtom = Atom(name: '_UserDataStore.phoneVisibility');
+
+  @override
+  bool get phoneVisibility {
+    _$phoneVisibilityAtom.reportRead();
+    return super.phoneVisibility;
+  }
+
+  @override
+  set phoneVisibility(bool value) {
+    _$phoneVisibilityAtom.reportWrite(value, super.phoneVisibility, () {
+      super.phoneVisibility = value;
+    });
+  }
+
   final _$_UserDataStoreActionController =
       ActionController(name: '_UserDataStore');
 
@@ -57,7 +72,8 @@ mixin _$UserDataStore on _UserDataStore, Store {
   String toString() {
     return '''
 userData: ${userData},
-codeVisibility: ${codeVisibility}
+codeVisibility: ${codeVisibility},
+phoneVisibility: ${phoneVisibility}
     ''';
   }
 }

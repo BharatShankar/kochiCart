@@ -39,6 +39,52 @@ mixin _$FoodItemStore on _FoodItemStore, Store {
     });
   }
 
+  final _$listOfRemaindersAtom = Atom(name: '_FoodItemStore.listOfRemainders');
+
+  @override
+  List<RemainderData> get listOfRemainders {
+    _$listOfRemaindersAtom.reportRead();
+    return super.listOfRemainders;
+  }
+
+  @override
+  set listOfRemainders(List<RemainderData> value) {
+    _$listOfRemaindersAtom.reportWrite(value, super.listOfRemainders, () {
+      super.listOfRemainders = value;
+    });
+  }
+
+  final _$isRemainderGoEditedAtom =
+      Atom(name: '_FoodItemStore.isRemainderGoEdited');
+
+  @override
+  bool get isRemainderGoEdited {
+    _$isRemainderGoEditedAtom.reportRead();
+    return super.isRemainderGoEdited;
+  }
+
+  @override
+  set isRemainderGoEdited(bool value) {
+    _$isRemainderGoEditedAtom.reportWrite(value, super.isRemainderGoEdited, () {
+      super.isRemainderGoEdited = value;
+    });
+  }
+
+  final _$remainderIndexAtom = Atom(name: '_FoodItemStore.remainderIndex');
+
+  @override
+  int get remainderIndex {
+    _$remainderIndexAtom.reportRead();
+    return super.remainderIndex;
+  }
+
+  @override
+  set remainderIndex(int value) {
+    _$remainderIndexAtom.reportWrite(value, super.remainderIndex, () {
+      super.remainderIndex = value;
+    });
+  }
+
   final _$checkoutItemsAtom = Atom(name: '_FoodItemStore.checkoutItems');
 
   @override
@@ -81,6 +127,21 @@ mixin _$FoodItemStore on _FoodItemStore, Store {
   set subTotalCount(int value) {
     _$subTotalCountAtom.reportWrite(value, super.subTotalCount, () {
       super.subTotalCount = value;
+    });
+  }
+
+  final _$loaderVisibilityAtom = Atom(name: '_FoodItemStore.loaderVisibility');
+
+  @override
+  bool get loaderVisibility {
+    _$loaderVisibilityAtom.reportRead();
+    return super.loaderVisibility;
+  }
+
+  @override
+  set loaderVisibility(bool value) {
+    _$loaderVisibilityAtom.reportWrite(value, super.loaderVisibility, () {
+      super.loaderVisibility = value;
     });
   }
 
@@ -128,6 +189,50 @@ mixin _$FoodItemStore on _FoodItemStore, Store {
   }
 
   @override
+  List<RemainderData> getCount() {
+    final _$actionInfo = _$_FoodItemStoreActionController.startAction(
+        name: '_FoodItemStore.getCount');
+    try {
+      return super.getCount();
+    } finally {
+      _$_FoodItemStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void deleteRemainder(int index) {
+    final _$actionInfo = _$_FoodItemStoreActionController.startAction(
+        name: '_FoodItemStore.deleteRemainder');
+    try {
+      return super.deleteRemainder(index);
+    } finally {
+      _$_FoodItemStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void saveRemainder(RemainderData remainder) {
+    final _$actionInfo = _$_FoodItemStoreActionController.startAction(
+        name: '_FoodItemStore.saveRemainder');
+    try {
+      return super.saveRemainder(remainder);
+    } finally {
+      _$_FoodItemStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void editRemainder(RemainderData remainder, dynamic indexOfRemainder) {
+    final _$actionInfo = _$_FoodItemStoreActionController.startAction(
+        name: '_FoodItemStore.editRemainder');
+    try {
+      return super.editRemainder(remainder, indexOfRemainder);
+    } finally {
+      _$_FoodItemStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   void incrementAction(
       String actionType, int dishCount, int index, int selectedMenuIndex) {
     final _$actionInfo = _$_FoodItemStoreActionController.startAction(
@@ -169,9 +274,13 @@ mixin _$FoodItemStore on _FoodItemStore, Store {
     return '''
 foodItemsList: ${foodItemsList},
 fooditemsObject: ${fooditemsObject},
+listOfRemainders: ${listOfRemainders},
+isRemainderGoEdited: ${isRemainderGoEdited},
+remainderIndex: ${remainderIndex},
 checkoutItems: ${checkoutItems},
 itemsCount: ${itemsCount},
-subTotalCount: ${subTotalCount}
+subTotalCount: ${subTotalCount},
+loaderVisibility: ${loaderVisibility}
     ''';
   }
 }
