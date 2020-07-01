@@ -52,7 +52,6 @@ class _FillRemainderDetailsState extends State<FillRemainderDetails> {
               .listOfRemainders[remainderStore.remainderIndex].dateStr +
           " 00:00:00");
       mydateTime = convertDateFromString('2018-09-27 13:27:00');
-      //2018-09-27 13:27:00
 
       setState(() {});
     }
@@ -87,8 +86,12 @@ class _FillRemainderDetailsState extends State<FillRemainderDetails> {
     print(mydateTime.day);
     print("this is milli seconds ${mydateTime.millisecond}");
     var platform = new NotificationDetails(android, iOS);
-    await flutterLocalNotificationsPlugin.schedule(0, 'Manoj gave task',
-        'Flutter remainder app to do', mydateTime, platform);
+
+    await flutterLocalNotificationsPlugin.show(0, "Remainder",
+        "Manoj gave me task to complete remainders app", platform,
+        payload: "platform");
+    // await flutterLocalNotificationsPlugin.schedule(0, 'Manoj gave task',
+    //     'Flutter remainder app to do', mydateTime, platform);
   }
 
   @override
@@ -101,8 +104,6 @@ class _FillRemainderDetailsState extends State<FillRemainderDetails> {
         padding: const EdgeInsets.all(16.0),
         child: Container(
           child: ListView(
-            // mainAxisSize: MainAxisSize.max,
-            // mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               titleOfRemainder(),
               SizedBox(

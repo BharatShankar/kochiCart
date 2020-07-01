@@ -43,9 +43,6 @@ class _HomePageState extends State<HomePage> {
         iconTheme: IconThemeData(
           color: Colors.white, //change your color here
         ),
-        // actions: <Widget>[
-        //   _shoppingCartBadge(),
-        // ],
       ),
       body: bodyWidget(),
       floatingActionButton: FloatingActionButton.extended(
